@@ -99,7 +99,7 @@ public class WeatherActivity extends Activity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.switch_city:
 			Intent intent = new Intent(this, ChooseAreaActivity.class);
-			intent.putExtra("From_weather_activity", true);
+			intent.putExtra("from_weather_activity", true);
 			startActivity(intent);
 			finish();
 			break;
