@@ -5,6 +5,12 @@ import java.util.List;
 
 import javax.security.auth.PrivateCredentialPermission;
 
+import com.chenle.Coolweather.R;
+
+
+
+import net.youmi.android.AdManager;
+
 import util.HttpCallbackListener;
 import util.HttpUtil;
 import util.Utility;
@@ -13,7 +19,7 @@ import model.City;
 import model.County;
 import model.Province;
 
-import com.example.coolweather.R;
+
 
 import db.CoolWeatherDB;
 
@@ -73,6 +79,10 @@ public class ChooseAreaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		
+		
+		//y有米广告的初始化
+		AdManager.getInstance(this).init("70ae3aadf5f1bdcf", "b26e420d2c45ef1f", false);
 		
 		isFromWeatherActivity = getIntent().getBooleanExtra("from_weather_activity", false);
 		

@@ -5,15 +5,18 @@ package activity;
 
 //
 
+
+
+import com.chenle.Coolweather.R;
+
+import net.youmi.android.banner.AdSize;
+import net.youmi.android.banner.AdView;
 import service.AutoUpdateService;
 import util.HttpCallbackListener;
 import util.HttpUtil;
 import util.Utility;
 
-import com.example.coolweather.R;
-import com.example.coolweather.R.id;
-import com.example.coolweather.R.layout;
-import com.example.coolweather.R.menu;
+
 
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -25,6 +28,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -92,6 +96,15 @@ public class WeatherActivity extends Activity implements OnClickListener {
 			// 没有县级代号时候就显示本地的天气
 			showWeather();
 		}
+		
+		
+		
+		//实例化广告条
+		AdView adview = new AdView(this,AdSize.FIT_SCREEN);
+		//获取要嵌入的广告条的布局
+		LinearLayout adLayout = (LinearLayout) findViewById(R.id.adLayout);
+		//将广告条加入到布局中
+		adLayout.addView(adview);
 	}
 
 	@Override
